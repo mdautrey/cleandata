@@ -1,6 +1,6 @@
 #Accelerometric and gyroscopic data aggregation
-## Transforming source datafiles
-> We aim at transforming source datafiles to get the matrix below
+## Analysing source datafiles
+> We want to transform source datafiles to get the matrix below
 
      AFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     SYXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -16,13 +16,22 @@
     SYXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     SYXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-* S file : subject_train.txt (a one column file)
+* A = activity / numerical code (Y) => labels corresponding to the codes are defined in the file activity_labels.txt
+* F : features => Features are used to name the numerical data columns
+* S : Subject => subject identified the person wearing the sensor
+* Y : numerical code of the activity
+* X : numerical data. Each value X is associated with a feature F, a Subject S and an activity code Y
+
+> The mapping between the various fields and the files is defined as follows :
+* S : subject_train.txt (a one column file)
 * X : X_train.txt
 * Y : y_train.txt
 * F : features.txt
+* A : activity_labels.txt
 
-## Merging test and train directories
-> Two directories : train and test data that must be merged
+## Test and train directories
+> The project requires that two directories, train and test data, are merged
 
-> In each directory, there is a subdirectory that contains the raw data (before filtering, and so on...)
+> In each directory, there is a subdirectory "Inertial Signals" that contains the raw data (before filtering, and so on...). We don't need to process these files.
+
 
