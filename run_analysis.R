@@ -13,7 +13,7 @@ y_test_file <- 'y_test.txt'
 x_cols_width <- rep(16,561)
 subject_cols_width <- c(2)
 y_cols_width <- c(1)
-
+project_result_file <- "project_result.txt"
 
 ## setting the working directory
 setwd(working_directory)
@@ -85,10 +85,15 @@ select_cols <- append(select_cols, col_names[grep("mean", col_names)])
 ## selecting data
 selected_data <- final_data[,select_cols]
 
+## computing average values from selected_data
+## there are 82 columns
+## each column must be averaged except col 1 (subject) col 2 (activity_code)
+## and col 3 (activity_name)
+project_result <- aggregate(selected_data[,c(4:82)], list(subject = selected_data$subject, activity_name = selected_data$activity_name), FUN=mean)
+write.table(project_result, file= project_result_file)
 
 
-
-
-
+## END OF WORK 
+## GOOD NIGHT
 
 

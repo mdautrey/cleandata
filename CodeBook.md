@@ -34,4 +34,14 @@
 
 > In each directory, there is a subdirectory "Inertial Signals" that contains the raw data (before filtering, and so on...). We don't need to process these files.
 
+## Loading files into data frames
+> We chose to use read.fwf to do most of the job, except features and activity labels files for which using read.csv was easier. read.fwf is very slow. In a future version, we may look for an optimized library.
+
+## Post-load check
+>We check that dimensions of resulting frames were compatible. Further verification such as type and consistance checking could be a good thing but we don't have time to
+## Merging data frames
+>Merging dataframes into a single one was quite an easy step, using rbind and cbind. We then renamed cols. We didn't check that the naming was consistant...
+## Next steps
+...
+
 
